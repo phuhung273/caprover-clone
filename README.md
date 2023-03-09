@@ -1,4 +1,4 @@
-\*\*\* Flow
+## Flow
 
 - Call API: emit 'error'
 
@@ -6,16 +6,16 @@
 
 - SSEPublishWorker: keep array of subsrcibers, write on error event
 
-\*\*\* Scaling:
+## Scaling:
 
 - Master publisher: holds no connection
 
 - Many slave publisher instance: each holds limited numbers of connections
 
-\*\*\* Updated Flow:
+#### Updated Flow:
 
 - Emit to master publisher only → master emit to slaves
 
-\*\*\* TODO:
+## TODO:
 
 - Rebuild code on request

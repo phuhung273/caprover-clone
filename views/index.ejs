@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%= data %>
+
+    <ul></ul>
+    <script>
+      window.onload = function () {
+        const evtSource = new EventSource("/sse");
+        const eventList = document.querySelector("ul");
+
+        evtSource.onmessage = (e) => {
+          const newElement = document.createElement("li");
+
+          newElement.textContent = `${e.data}`;
+          eventList.appendChild(newElement);
+        };
+      };
+    </script>
+  </body>
+</html>
